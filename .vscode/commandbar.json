@@ -1,0 +1,88 @@
+{
+    "skipTerminateQuickPick": true,
+    "skipSwitchToOutput": false,
+    "skipErrorMessage": true,
+    "commands": [
+        {
+            "text": "Fold",
+            "tooltip": "Fold all document",
+            "color": "yellow",
+            "commandType": "palette",
+            "command": "editor.foldAll",
+            "alignment": "left",
+            "priority": 1
+        },
+        {
+            "text": "Format",
+            "tooltip": "Format document",
+            "color": "yellow",
+            "commandType": "palette",
+            "command": "editor.action.formatDocument.multiple",
+            "alignment": "left",
+            "priority": 2
+        },
+        {
+            "text": "Follow",
+            "tooltip": "Go to definition",
+            "color": "yellow",
+            "commandType": "palette",
+            "command": "editor.action.revealDefinition",
+            "alignment": "left",
+            "priority": 3
+        },
+        {
+            "text": "Comment",
+            "tooltip": "Toggle line comment",
+            "color": "yellow",
+            "commandType": "palette",
+            "command": "editor.action.commentLine",
+            "alignment": "left",
+            "priority": 4
+        },
+        {
+            "text": "Bookmark Labeled",
+            "tooltip": "Labeled Bookmarks",
+            "color": "yellow",
+            "commandType": "palette",
+            "command": "bookmarks.toggleLabeled",
+            "alignment": "left",
+            "priority": 5
+        },
+        {
+            "text": "Bookmark Toggle",
+            "tooltip": "Toggle Bookmarks",
+            "color": "yellow",
+            "commandType": "palette",
+            "command": "bookmarks.toggle",
+            "alignment": "left",
+            "priority": 6
+        },
+        {
+            "text": "Bookmarks List",
+            "tooltip": "List Bookmarks",
+            "color": "yellow",
+            "commandType": "palette",
+            "command": "bookmarks.list",
+            "alignment": "left",
+            "priority": 7
+        },
+        {
+            "text": "UpperCase",
+            "tooltip": "Covert to UpperCase",
+            "color": "yellow",
+            "commandType": "palette",
+            "command": "editor.action.transformToUppercase",
+            "alignment": "left",
+            "priority": 8
+        },
+        {
+            "text": "Nvs Build",
+            "tooltip": "Nvs Build",
+            "color": "yellow",
+            "commandType": "exec",
+            "command": "py C:/Users/Tiziano/.platformio/packages/framework-espidf/components/nvs_flash/nvs_partition_generator/nvs_partition_gen.py --input nvs.csv --output nvs.bin --size 24576",
+            "alignment": "left",
+            "priority": 8
+        }
+    ]
+}
