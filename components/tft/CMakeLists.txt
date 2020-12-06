@@ -1,0 +1,5 @@
+FILE(GLOB SOURCES *.c)
+set(COMPONENT_ADD_INCLUDEDIRS ".")
+set(COMPONENT_SRCS ${SOURCES})
+set(COMPONENT_REQUIRES "spidriver")
+register_component()

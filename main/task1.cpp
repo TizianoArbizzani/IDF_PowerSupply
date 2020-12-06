@@ -12,7 +12,7 @@
 
 #include "INA219.h"
 
-static const char *TAG = "Task1";
+static const char *TAG = "T1";
 
 #define I2C_MASTER_TX_BUF_DISABLE 0 /*!< I2C master do not need buffer */
 #define I2C_MASTER_RX_BUF_DISABLE 0 /*!< I2C master do not need buffer */
@@ -45,10 +45,10 @@ void task1(void *parameter)
     ESP_LOGW(TAG, "Task1 (MAIN) ........ [Starting]");
 
     INA219 ina219_left(INA219::I2C_ADDR_40);
-    ESP_LOGW(TAG, "INA219 Left addr .... [%X]", INA219::I2C_ADDR_40);
+    ESP_LOGI(TAG, "INA219 Left addr .... [%X]", INA219::I2C_ADDR_40);
 
     INA219 ina219_right(INA219::I2C_ADDR_41);
-    ESP_LOGW(TAG, "INA219 Right addr ... [%X]", INA219::I2C_ADDR_41);
+    ESP_LOGI(TAG, "INA219 Right addr ... [%X]", INA219::I2C_ADDR_41);
 
     conf.mode = i2c_mode_t::I2C_MODE_MASTER;
     conf.sda_io_num = gpio_num_t::GPIO_NUM_21;
@@ -58,16 +58,16 @@ void task1(void *parameter)
     conf.master.clk_speed = I2C_MASTER_FREQ_HZ;
 
     Rv = i2c_param_config(i2c_master_port, &conf);
-    ESP_LOGW(TAG, "I2C Configuration ... [%d]", Rv);
+    ESP_LOGI(TAG, "I2C Configuration ... [%d]", Rv);
 
     Rv = i2c_driver_install(i2c_master_port, conf.mode, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);
-    ESP_LOGW(TAG, "I2C Driver install .. [%d]", Rv);
+    ESP_LOGI(TAG, "I2C Driver install .. [%d]", Rv);
 
     ina219_left.begin();
-    ESP_LOGW(TAG, "INA219 Left conf .... [OK]");
+    ESP_LOGI(TAG, "INA219 Left conf .... [OK]");
 
     ina219_right.begin();
-    ESP_LOGW(TAG, "INA219 Right conf ... [OK]");
+    ESP_LOGI(TAG, "INA219 Right conf ... [OK]");
 
     ShowData += esp_timer_get_time();
 
